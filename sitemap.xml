@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://newblog.胡.fun/2024/06/13/%E6%B4%9B%E8%B0%B7%E7%BE%8E%E5%8C%96/</loc>
+    
+    <lastmod>2024-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://newblog.胡.fun/2024/06/13/%E6%88%91%E7%9A%84AI/</loc>
     
     <lastmod>2024-07-23</lastmod>
@@ -56,15 +65,6 @@
   </url>
   
   <url>
-    <loc>https://newblog.胡.fun/2024/06/13/%E6%B4%9B%E8%B0%B7%E7%BE%8E%E5%8C%96/</loc>
-    
-    <lastmod>2024-06-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://newblog.胡.fun/2024/06/13/Windows%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     
     <lastmod>2024-06-15</lastmod>
@@ -94,7 +94,7 @@
 
   <url>
     <loc>https://newblog.胡.fun/</loc>
-    <lastmod>2024-08-12</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -102,21 +102,21 @@
   
   <url>
     <loc>https://newblog.胡.fun/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2024-08-12</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://newblog.胡.fun/tags/%E7%BD%AE%E9%A1%B6/</loc>
-    <lastmod>2024-08-12</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://newblog.胡.fun/tags/%E6%97%A0/</loc>
-    <lastmod>2024-08-12</lastmod>
+    <lastmod>2024-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
