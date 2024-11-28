@@ -20,18 +20,29 @@
   <title>最小生成树总结 - 编程小白的博客</title>
 
   
-    <meta name="description" content="最小生成树小结Kruscal思路 一开始有n棵树，每棵树只有一个节点  每次选择权值最小的边，边的两个端点不能在同一棵树中  选择一条边后，将它连接的两个节点所在的树合并  重复这个过程，直到所有节点都在一棵树中，或没有更多的边   手动模拟求该图最小生成树 此时最小边为1，且1和2节点不在同一棵树 可以连接 此时边数为1  图中Y代表选过的点或边,N代表排除掉不满足条件的边  此时最小边为3，且">
+    <meta name="description" content="最小生成树小结Kruscal思路 一开始有n棵树，每棵树只有一个节点  每次选择权值最小的边，边的两个端点不能在同一棵树中  选择一条边后，将它连接的两个节点所在的树合并  重复这个过程，直到所有节点都在一棵树中，或没有更多的边   手动模拟     求该图最小生成树 此时最小边为1，且1和2节点不在同一棵树 可以连接 此时边数为1  图中Y代表选过的点或边,N代表排除掉不满足条件的边  此时最小">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最小生成树总结">
 <meta property="og:url" content="https://newblog.胡.fun/2024/11/28/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="编程小白的博客">
-<meta property="og:description" content="最小生成树小结Kruscal思路 一开始有n棵树，每棵树只有一个节点  每次选择权值最小的边，边的两个端点不能在同一棵树中  选择一条边后，将它连接的两个节点所在的树合并  重复这个过程，直到所有节点都在一棵树中，或没有更多的边   手动模拟求该图最小生成树 此时最小边为1，且1和2节点不在同一棵树 可以连接 此时边数为1  图中Y代表选过的点或边,N代表排除掉不满足条件的边  此时最小边为3，且">
+<meta property="og:description" content="最小生成树小结Kruscal思路 一开始有n棵树，每棵树只有一个节点  每次选择权值最小的边，边的两个端点不能在同一棵树中  选择一条边后，将它连接的两个节点所在的树合并  重复这个过程，直到所有节点都在一棵树中，或没有更多的边   手动模拟     求该图最小生成树 此时最小边为1，且1和2节点不在同一棵树 可以连接 此时边数为1  图中Y代表选过的点或边,N代表排除掉不满足条件的边  此时最小">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/graph(1).png">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/graph(2).png">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/graph(3).png">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/graph(4).png">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/graph(5).png">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/5.PNG">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/1.PNG">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/2.PNG">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/3.PNG">
+<meta property="og:image" content="https://newblog.xn--920a.fun/img/1128/4.PNG">
 <meta property="article:published_time" content="2024-11-28T12:40:22.000Z">
-<meta property="article:modified_time" content="2024-11-28T12:46:46.287Z">
+<meta property="article:modified_time" content="2024-11-28T12:52:29.083Z">
 <meta property="article:author" content="Change">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://newblog.xn--920a.fun/img/1128/graph(1).png">
   
   
   
@@ -79,7 +90,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-28T12:40:22.000Z">2024-11-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-28T12:46:46.287Z">2024-11-28</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-11-28T12:40:22.000Z">2024-11-28</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-11-28T12:52:29.083Z">2024-11-28</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -100,7 +111,8 @@
 <li><p>重复这个过程，直到所有节点都在一棵树中，或没有更多的边</p>
 </li>
 </ul>
-<h3 id="手动模拟"><a href="#手动模拟" class="headerlink" title="手动模拟"></a>手动模拟</h3><p><a href="/img/1128/graph(1).png"></a><a href="/img/1128/graph(2).png"></a><a href="/img/1128/graph(3).png"></a><a href="/img/1128/graph(4).png"></a><a href="/img/1128/graph(5).png"></a><br>求该图最小生成树</p>
+<h3 id="手动模拟"><a href="#手动模拟" class="headerlink" title="手动模拟"></a>手动模拟</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/graph(1).png" data-fancybox="true"/></div></div> <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/graph(2).png" data-fancybox="true"/></div></div> <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/graph(3).png" data-fancybox="true"/></div></div> <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/graph(4).png" data-fancybox="true"/></div></div> <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/graph(5).png" data-fancybox="true"/></div></div>
+<p>求该图最小生成树</p>
 <p>此时最小边为1，且1和2节点不在同一棵树</p>
 <p>可以连接</p>
 <p>此时边数为1</p>
@@ -126,7 +138,8 @@
 <h4 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h4><p><a target="_blank" rel="noopener" href="http://oi.nks.edu.cn:19360/zh/Problem/Details?cid=3080&tid=E">nkoj极地网络</a></p>
 <p>这道题重点在于思路部分，点的数量仅需$P-S$条边</p>
 <p>还有一个重点，在处理边时要运用勾股定理计算</p>
-<p>$\sqrt{(x_{1}-x_{2} )^{2}+ (y_{1}-y_{2} )^{2}} $</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/5.PNG" data-fancybox="true"/></div></div> 
+
 <p>代码重点部分</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=p;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>;j&lt;=p;j++)&#123;</span><br><span class="line">            a[++c].x=i;</span><br><span class="line">            a[c].y=j;</span><br><span class="line">            <span class="comment">//边的处理</span></span><br><span class="line">            a[c].z=<span class="built_in">sqrt</span>(<span class="number">1.0</span>*(bb[i]-bb[j])*(bb[i]-bb[j])+<span class="number">1.0</span>*(b[i]-b[j])*(b[i]-b[j]));</span><br><span class="line">            <span class="keyword">if</span>(i==j) a[c].z=INT_MAX;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ......</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//c为边数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=c;i++)&#123;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> ta=<span class="built_in">fa</span>(a[i].x),tb=<span class="built_in">fa</span>(a[i].y);</span><br><span class="line">        <span class="keyword">if</span>(ta!=tb)&#123;</span><br><span class="line">            cnt++;</span><br><span class="line">            ans=<span class="built_in">max</span>(ans,a[i].z);</span><br><span class="line">            f[ta]=tb;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(cnt==p-s) <span class="keyword">break</span>;<span class="comment">//注意变为p-s</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
@@ -138,7 +151,12 @@
 <li><p>反复执行，直到所有点都加入树中</p>
 </li>
 </ul>
-<h3 id="代码（LJ版）"><a href="#代码（LJ版）" class="headerlink" title="代码（LJ版）"></a>代码（LJ版）</h3><p><a href="/img/1128/1.PNG"></a><a href="/img/1128/2.PNG"></a><a href="/img/1128/3.PNG"></a><br>prim+堆在许多情况下比$Kruscal$快<br><a href="/img/1128/4.PNG"></a><br>推荐用$Kruscal$</p>
+<h3 id="代码（LJ版）"><a href="#代码（LJ版）" class="headerlink" title="代码（LJ版）"></a>代码（LJ版）</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/1.PNG" data-fancybox="true"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/2.PNG" data-fancybox="true"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/3.PNG" data-fancybox="true"/></div></div>
+<p>prim+堆在许多情况下比$Kruscal$快</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/img/1128/4.PNG" data-fancybox="true"/></div></div> 
+<p>推荐用Kruscal</p>
 
 <div class="article-footer fs14">
     <section id="license">
