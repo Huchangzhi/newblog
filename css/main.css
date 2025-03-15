@@ -6808,6 +6808,29 @@ a[data-fancybox] {
   margin-right: 1rem;
   border-radius: 8px;
 }
+.md-text p.katex-block,
+.md-text .katex-display {
+  overflow: scroll;
+}
+.md-text p.katex-block::-webkit-scrollbar,
+.md-text .katex-display::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+.md-text p.katex-block::-webkit-scrollbar-track-piece,
+.md-text .katex-display::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+.md-text p.katex-block::-webkit-scrollbar-thumb,
+.md-text .katex-display::-webkit-scrollbar-thumb {
+  background: var(--text-meta);
+  cursor: pointer;
+  border-radius: 0;
+}
+.md-text p.katex-block::-webkit-scrollbar-thumb:hover,
+.md-text .katex-display::-webkit-scrollbar-thumb:hover {
+  background: var(--text-p3);
+}
 .cmt-body.twikoo {
   --twikoo-theme: #1cd0fd;
   margin-top: 1.5rem;
